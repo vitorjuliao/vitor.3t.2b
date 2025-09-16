@@ -1,0 +1,110 @@
+:root {
+  --fundo: #000000; /* fundo preto */
+  --fundo-card: #1e1e2f;
+  --fundo-card-hover: #2a2a40;
+  --texto-principal: #ffffff;
+  --texto-secundario: #a1a1b5;
+  --destaque: #ffffff;
+  --rosa: #F85B72;
+}
+
+/* --- RESET EXTRA (garante suavidade nas animações) --- */
+* {
+  transition: all 0.3s ease;
+}
+
+body {
+  background: 
+    linear-gradient(160deg, rgba(94,0,255,0.5) 20%, rgba(0,0,0,0) 100%), /* degradê roxo sutil */
+    var(--fundo); /* fundo preto sólido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: var(--texto-principal);
+  padding: 20px;
+}
+
+/* --- TÍTULO --- */
+.titulo {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--destaque);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --- CONTÊINER DOS BOTÕES --- */
+.teclado-container {
+  background: var(--fundo-card); /* Mesma cor de fundo dos botões */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+  margin-bottom: 40px; /* Espaçamento abaixo do container */
+  width: 100%;
+  max-width: 860px; /* Um pouco maior que o teclado para acomodar o padding */
+  display: flex; /* Para centralizar o grid interno */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* --- GRID DE BOTÕES --- */
+.teclado {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  width: 100%; /* Ocupa 100% da largura do container pai */
+  max-width: 800px; /* Mantém o max-width original para o grid interno */
+}
+
+/* --- BOTÕES (CARDS) --- */
+.tecla {
+  background: var(--fundo-card);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tecla img {
+  width: 60px;
+  height: 60px;
+  filter: brightness(0) invert(1); /* deixa todos brancos */
+}
+
+.tecla:hover {
+  background: var(--fundo-card-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* --- QUANDO CLICAR --- */
+.tecla:active {
+  transform: scale(0.95);
+  background: var(--rosa);
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.tiago {
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 12px;
+  width: 160px;
+  height: auto;
+}
+
+.by {
+  color: var(--texto-secundario);
+}
